@@ -34,9 +34,9 @@ export default function ShoppingCart() {
   const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
-    <div className="w-full h-[749px] bg-gray-50 p-6 container mx-auto">
-      <h1 className="text-2xl font-normal text-gray-800 pl-20 pt-8 pb-10">Your shopping cart</h1>
-      <div className="bg-gray-50 rounded-lg shadow-md mx-20">
+    <><div className="w-[390px] md:w-full h-[749px] bg-gray-50 p-6 container mx-auto pb-10">
+      <h3 className="text-2xl font-normal text-gray-800 pl-0 md:pl-20 pt-8 pb-10">Your shopping cart</h3>
+      <div className="bg-gray-50 rounded-lg shadow-md mx-0 pr-10 md:pr-0 md:mx-20">
         <table className="w-full text-left">
           <thead>
             <tr className="border-b">
@@ -52,7 +52,7 @@ export default function ShoppingCart() {
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-[109px] h-[134px] rounded-md object-cover"
+                    className="w-[133px] md:w-[109px] h-[166px] md:h-[134px] rounded-md object-cover"
                   />
                   <div>
                     <p className="font-medium text-gray-800">{item.name}</p>
@@ -90,11 +90,13 @@ export default function ShoppingCart() {
         </div>
         <p className="text-sm text-gray-500 mt-2 text-right">Taxes and shipping are calculated at checkout</p>
         <div className="mt-4 flex justify-end">
-        <button className=" mt-4 w-[172px] h-[56px] bg-[#2A254B] text-white py-3 rounded text-center font-medium hover:bg-indigo-500">
+        <button className=" mt-4 w-[342px] md:w-[172px] h-[56px] bg-[#2A254B] text-white py-3 rounded text-center font-medium hover:bg-indigo-500">
           Go to checkout
         </button>
         </div>
       </div>
-    </div>
-  );
+      </div>
+      </>
+      
+       );
 }

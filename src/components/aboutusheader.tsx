@@ -3,10 +3,15 @@ import { CiSearch } from 'react-icons/ci'
 import { FaRegUserCircle } from 'react-icons/fa'
 import { MdOutlineShoppingCart } from 'react-icons/md'
 import Link from 'next/link'
+import { SheetSide } from './sheet'
 const Aboutusheader = () => {
   return (
     <><div className='bg-white h-[66px] flex justify-between items-center px-5 container mx-auto border-b-2'>
           <h1 className="w-[65px] h-[30px] text-2xl"><Link className="nav-links" href={"/"}>Avion</Link></h1>
+          <div className='md:hidden'>
+             <SheetSide/>
+          </div>
+          <div className='hidden md:block'>
           <div className='flex gap-3 justify-center items-center'>
             <ul className='flex flex-row gap-4'>
             <li>
@@ -23,7 +28,8 @@ const Aboutusheader = () => {
               <Link className="nav-links" href={"/shoppingbaskets"}><MdOutlineShoppingCart /></Link>
               <FaRegUserCircle />
           </div>
-      </div><div className='bg-white container mx-auto'>
+          </div>
+      </div><div className='bg-white container mx-auto hidden md:block'>
               <ul className='flex flex-row justify-center gap-10 text-gray-700 pt-4'>
                   <li>
                       <Link className="nav-links" href={"/allproducts"}>All products</Link>

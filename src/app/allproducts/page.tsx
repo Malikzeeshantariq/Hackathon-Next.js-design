@@ -4,6 +4,7 @@ import Footer from "@/components/footer";
 import Footerend from "@/components/footerend";
 import Header from "@/components/header";
 import Topnav from "@/components/topnav";
+import { FaCaretDown } from "react-icons/fa";
 
 export default function AllProducts() {
   // Mock product data
@@ -25,16 +26,27 @@ export default function AllProducts() {
         <Header/>
       {/* Banner Section */}
       <div
-        className="relative h-60 bg-cover bg-center flex items-center container mx-auto"
+        className="w-[390px] relative h-[146px] md:h-[209px] md:w-full bg-cover bg-center flex items-center container mx-auto"
         style={{ backgroundImage: `url('All Products.png')` }}
       >
-        <h1 className="relative z-10 text-white text-4xl font-normal pl-20 pt-20">All products</h1>
+        <h1 className="relative z-10 text-white text-4xl font-normal pl-20 pt-10 md:pt-20">All products</h1>
       </div>
-
+      <div className="md:hidden">
+      <div className="flex justify-center pt-4 gap-10">
+        <div className="flex justify-center items-center bg-slate-50 px-3">
+        <button className="w-[100px] h-[56px] font-normal text-base text-center">Filters</button>
+        <FaCaretDown/>
+        </div>
+        <div className="flex justify-center items-center bg-slate-50 px-3">
+        <button className="w-[100px] h-[56px] font-normal text-base">Sorting</button>
+        <FaCaretDown/>
+        </div>
+        </div>
+      </div>
       {/* Product Listing Section */}
       <div className="flex container mx-auto">
         {/* Filters Section */}
-        <aside className=" bg-white w-1/4 p-6 font-light space-x-12">
+        <aside className=" bg-white w-1/4 p-6 font-light space-x-12 hidden md:block">
           <h2 className="text-lg font-normal  mt-6 mb-4 pl-12">Product type</h2>
           <ul className="space-y-3">
             {["Furniture", "Homeware", "Sofas", "Light fittings", "Accessories"].map((type) => (
@@ -73,13 +85,14 @@ export default function AllProducts() {
         </aside>
 
         {/* Products Grid */}
-        <section className=" bg-white w-full p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ">
+        
+        <section className=" bg-white w-full p-6 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ">
           {products.map((product) => (
             <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-110 transition duration-1000 hover:shadow-md">
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-[305px]] h-[462px] object-fill "
+                className="w-[163px] md:w-[305px] h-[201px] md:h-[375px] object-fill "
               />
               <div className="p-4">
                 <h3 className="text-lg font-medium text-gray-800">{product.name}</h3>
