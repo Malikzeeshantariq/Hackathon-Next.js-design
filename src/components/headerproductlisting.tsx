@@ -11,4 +11,33 @@ import { TbTruckDelivery } from 'react-icons/tb'
     </div>
   )
 }
-
+export const Nav = () => {
+  return (
+    <div className='h-[80] w-full container mx-auto'>
+      <ul className='flex flex-row justify-center gap-10 text-gray-700 pt-4'>
+                <h1 className="text-[24] h-[30px] w-[65px]">Avion</h1>
+                <li>
+                <Link className="nav-links" href={"/product"}>Plant pots</Link>
+                </li>
+                <li>
+                <Link className="nav-links" href={"/"}>Ceramics</Link>
+                </li>
+                <li>
+                <Link className="nav-links" href={"/"}>Tables</Link>
+                </li>
+                 <li>
+                <Link className="nav-links" href={"/"}>Chairs</Link>
+                </li>
+                <li>
+                <Link className="nav-links" href={"/"}>Crockery</Link>
+                </li>
+                <li>
+                <Link className="nav-links" href={"/"}>Tableware</Link>
+                </li>
+                <li>
+                <Link className="nav-links" href={"/"}>Cutlery</Link>
+                </li>
+            </ul>
+          </div>
+  )
+}
